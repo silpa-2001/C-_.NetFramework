@@ -32,9 +32,9 @@ namespace Delegate
         ArthOp op4 = new ArthOp(MathOp.Div);
 
         int result1 = op1(534, 789);
-        int result2 = op1(245, 658);
-        int result3 = op1(53, 79);
-        int result4 = op1(34, 7);
+        int result2 = op2(245, 658);
+        int result3 = op3(53, 79);
+        int result4 = op4(34, 7);
 
         Console.WriteLine("Result1=" + result1);
         Console.WriteLine("Result2=" + result2);
