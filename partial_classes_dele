@@ -1,0 +1,62 @@
+//Books1.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PartialClasses
+{
+    public partial class Books
+    {
+        public string author_name;
+        public string book_no;
+        public void details()
+        {
+            Console.WriteLine("Author Name: " + author_name);
+            Console.WriteLine("Book No: " + book_no);
+        }
+    }
+}
+
+//Books2.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PartialClasses
+{
+    public partial class Books
+    {
+        public string Book_mark;
+        public string publisher_name;
+        public void Display()
+        {
+            Console.WriteLine("Book Mark: " + Book_mark);
+            Console.WriteLine("Publisher Name: " + publisher_name);
+        }
+
+    }
+}
+
+//Books.cs
+using System;
+
+namespace PartialClasses
+{
+    public partial class Books
+    {
+        static void Main(string[] args)
+        {
+            Books b1 = new Books();
+            b1.author_name = "Arthur";
+            b1.book_no = "S2321";
+            b1.Book_mark = "C7/45";
+            b1.publisher_name = "AshBurn";
+            b1.details();
+            b1.Display();
+        }
+    }
+}
