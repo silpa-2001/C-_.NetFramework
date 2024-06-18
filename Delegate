@@ -1,0 +1,45 @@
+using System;
+delegate int ArthOp(int a, int b);
+namespace Delegate
+{
+    internal class MathOp
+    {
+        public static int Add(int x, int y)
+        {
+            return (x + y);
+        }
+        public static int Sub(int x, int y)
+        {
+            return (x - y);
+        }
+        public static int Mul(int x, int y)
+        {
+            return (x * y);
+        }
+        public static int Div(int x,int y)
+        {
+            return (x / y);
+        }
+        
+    }
+  internal class DelegateTest
+  {
+    static void Main(string[] args)
+    {
+        ArthOp op1 = new ArthOp(MathOp.Add);
+        ArthOp op2 = new ArthOp(MathOp.Sub);
+        ArthOp op3 = new ArthOp(MathOp.Mul);
+        ArthOp op4 = new ArthOp(MathOp.Div);
+
+        int result1 = op1(534, 789);
+        int result2 = op1(245, 658);
+        int result3 = op1(53, 79);
+        int result4 = op1(34, 7);
+
+        Console.WriteLine("Result1=" + result1);
+        Console.WriteLine("Result2=" + result2);
+        Console.WriteLine("Result3=" + result3);
+        Console.WriteLine("Result4=" + result4);
+    }
+  }
+}
