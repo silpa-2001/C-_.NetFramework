@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Generic_Delegate
+{
+    class Program
+    {
+       public delegate int SumDelegate(int x, int y);//declare a delegate
+       
+       public static void Main(string[] args)
+       {
+           SumDelegate sd= delegate(int x,int y){return x+y;};//lambda expression used for anonymous function(function without names)
+           Console.WriteLine(sd(32,21));
+       }
+       
+    }
+}
