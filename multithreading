@@ -1,0 +1,38 @@
+using System;
+using System.Threading;
+
+class Program
+{
+    static void Main()
+    {
+        // Create and start a new thread
+        Thread thread1 = new Thread(new ThreadStart(ThreadMethod));
+        thread1.Start();
+
+        // Create and start another thread
+        Thread thread2 = new Thread(() => Console.WriteLine("Hello from Thread 2!"));
+        thread2.Start();
+
+        // Main thread work
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("Hello from Main Thread!");
+            Thread.Sleep(500);
+        }
+
+        // Wait for the threads to complete
+        thread1.Join();
+        thread2.Join();
+
+        Console.WriteLine("All threads complete.");
+    }
+
+    static void ThreadMethod()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("Hello from Thread 1!");
+            Thread.Sleep(1000);
+        }
+    }
+}
