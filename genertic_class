@@ -1,0 +1,29 @@
+using System;
+
+public class Program<T>
+{
+    private T data;
+    public T value
+    {
+        get
+        {
+            return this.data;
+        }
+        set
+        {
+            this.data=value;
+        }
+    }
+}   
+class Test
+{
+    public static void Main(String[] args)
+    {
+        Program<string> name= new Program<string>();
+        name.value="Silpa";
+        Program<int> age= new Program<int>();
+        age.value=22;
+        Console.WriteLine("Name: "+name.value);
+        Console.WriteLine("Age: "+age.value);
+    }
+}
