@@ -1,0 +1,24 @@
+using System;
+
+namespace DelegateEvent
+{
+    public delegate string MyDel(string str);
+    class Demo
+    {
+        event MyDel MyEvent;
+        public Demo()
+        {
+           this.MyEvent+=new MyDel(this.Welcome);
+        }
+        public string Welcome(string name)
+        {
+            return "Welcome "+name;
+        }
+        public static void Main(String[] args)
+        {
+            Demo obj=new Demo();
+            string result=obj.MyEvent("Silpa");
+            Console.WriteLine(result);
+        }
+    }
+}
