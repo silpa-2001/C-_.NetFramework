@@ -1,0 +1,16 @@
+using System;
+
+public class Program
+{
+    public void display<TypeOfValue>(string msg,TypeOfValue value)
+    {
+        Console.WriteLine("{0}:{1}",msg,value);
+    }
+    public static void Main(String[] agrs)
+    {
+        Program p=new Program();
+        p.display<string>("String","Silpa");
+        p.display<int>("Integer",21);
+        p.display<double>("Double",32.54);
+    }
+}
