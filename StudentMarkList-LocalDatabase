@@ -1,0 +1,44 @@
+//tables created for StudentMarkList
+//Dept
+CREATE TABLE [dbo].[Dept]
+(
+	[DId] INT NOT NULL PRIMARY KEY, 
+    [Dname] VARCHAR(50) NULL
+)
+//Student
+CREATE TABLE [dbo].[Student] (
+    [SId]      INT          NOT NULL,
+    [Sname]    VARCHAR (50) NULL,
+    [DId]      INT          NOT NULL,
+    [Gender]   VARCHAR (50) NULL,
+    [Phone No] VARCHAR (50) NULL,
+    [DOB]      VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([SId] ASC),
+    FOREIGN KEY ([DId]) REFERENCES [dbo].[Dept] ([DId])
+);
+//Mark
+CREATE TABLE [dbo].[Mark] (
+    [SId]   INT NOT NULL,
+    [Marks] INT NULL,
+    FOREIGN KEY ([SId]) REFERENCES [dbo].[Student] ([SId])
+);
+//inserted values
+//Dept
+INSERT INTO [dbo].[Dept] ([DId], [Dname]) VALUES (1, N'Computer Science')
+INSERT INTO [dbo].[Dept] ([DId], [Dname]) VALUES (2, N'Mathematics')
+INSERT INTO [dbo].[Dept] ([DId], [Dname]) VALUES (3, N'Physics')
+INSERT INTO [dbo].[Dept] ([DId], [Dname]) VALUES (4, N'Chemistry')
+INSERT INTO [dbo].[Dept] ([DId], [Dname]) VALUES (5, N'Biology')
+//Student
+INSERT INTO [dbo].[Student] ([SId], [Sname], [DId], [Gender], [Phone No], [DOB]) VALUES (1, N'Alice Johnson', 1, N'Female', N'555-1234', N'2000-05-14')
+INSERT INTO [dbo].[Student] ([SId], [Sname], [DId], [Gender], [Phone No], [DOB]) VALUES (2, N'Bob Smith', 2, N'Male', N'555-5678', N'1999-08-22')
+INSERT INTO [dbo].[Student] ([SId], [Sname], [DId], [Gender], [Phone No], [DOB]) VALUES (3, N'Charlie Brown', 3, N'Male', N'555-8765', N'2001-01-30')
+INSERT INTO [dbo].[Student] ([SId], [Sname], [DId], [Gender], [Phone No], [DOB]) VALUES (4, N'Diana Hale', 4, N'Female', N'555-4321', N'1998-12-05')
+INSERT INTO [dbo].[Student] ([SId], [Sname], [DId], [Gender], [Phone No], [DOB]) VALUES (5, N'Edward Wilson', 5, N'Male', N'555-6789', N'2002-07-19')
+//Mark
+INSERT INTO [dbo].[Mark] ([SId], [Marks]) VALUES (1, 85)
+INSERT INTO [dbo].[Mark] ([SId], [Marks]) VALUES (2, 90)
+INSERT INTO [dbo].[Mark] ([SId], [Marks]) VALUES (3, 78)
+INSERT INTO [dbo].[Mark] ([SId], [Marks]) VALUES (4, 88)
+INSERT INTO [dbo].[Mark] ([SId], [Marks]) VALUES (5, 92)
+
